@@ -82,12 +82,10 @@ attributes:
 
 Additionally, the following optional attributes are supported:
 
-- `db/doc`: the documentation for the attribute as a string
-- `db/unique`: a uniqueness constraint on the attribute for a given value, can
-  be either `db.unique/value` (only one entity with this attribute can have the same value) or `db.unique/identity`(only one entity can have
-  the value for this attribute with upsert enabled)
+- `db/doc`: documentation for the attribute (provided as string)
+- `db/unique`: enforces uniqueness; can be either `db.unique/value` (only one entity with this attribute can have a given value) or `db.unique/identity` (only one entity can have the value for this attribute with upsert enabled)
 - `db/index`: indicates whether an index for the attribute's value should be
-  created as a boolean
+  created (boolean)
 - `db/isComponent`: indicates that an attribute of type `:db.type/ref` references a subcomponent of the entity that has the attribute (for cascading retractions)
 - if `:db/valueType` is `:db.type/tuple`, one of:
   - `db/tupleAttrs`: a collection of attributes that make up the tuple (for [composite tuples](https://docs.datomic.com/on-prem/schema/schema.html#composite-tuples))
